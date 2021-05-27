@@ -1,0 +1,11 @@
+@import "../../../assets/css/theme";
+
+footer {
+    background-color: var(--footer-bg);
+    padding: 15px;
+    min-height: $footer-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -60px;
+}

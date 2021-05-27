@@ -1,0 +1,77 @@
+@import "./assets/css/theme";
+
+html,body {
+    background-color: var(--body-bg);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+* {
+    box-sizing: border-box;
+}
+
+// Main
+main {
+    min-height: calc(100vh - 80px);
+    padding: 15px;
+    padding-bottom: 80px;
+    max-width: $container;
+    margin: 0px auto;
+}
+
+// Table
+.table-responsive {
+    width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+    table {
+        min-width: 800px;
+    }
+}
+table {
+    width: 100%;
+}
+.mat-column-avatar {
+    .avatar {
+        display: flex;
+        align-items: center;
+        padding: 10px 0px;
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            overflow: hidden;
+            border-radius: 50%;
+            margin-right: 15px;
+
+            img {
+                width: 100%;
+            }
+        }
+        div {
+            font-weight: 600;
+            span {
+                display: block;
+                text-transform: uppercase;
+                color: #666666;
+                font-size: 0.8em;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0px 0px;
+
+    .grid {
+        flex: 1;
+
+        .mat-form-field {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+}
