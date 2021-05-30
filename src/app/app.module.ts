@@ -13,8 +13,16 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-
-
+import { CalculateDaysComponent } from './view/calculate-days/calculate-days.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { CalendarHeaderComponent } from './shared/calendar-header/calendar-header.component';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -22,7 +30,9 @@ import {MatInputModule} from '@angular/material/input';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ContactComponent
+    ContactComponent,
+    CalculateDaysComponent,
+    CalendarHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +44,16 @@ import {MatInputModule} from '@angular/material/input';
     MatSnackBarModule,
     MatPaginatorModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

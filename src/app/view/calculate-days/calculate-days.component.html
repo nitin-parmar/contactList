@@ -1,0 +1,78 @@
+<div class="calculator">
+    <div>
+        <form (ngSubmit)="calculate()" [formGroup]="calculateForm">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Days Calculator</mat-card-title>
+                </mat-card-header>
+                <mat-divider></mat-divider>
+                <mat-card-content>
+                    <div class="form-control">
+                        <mat-label>Start Date</mat-label>
+                        <mat-form-field color="primary" appearance="outline">
+                            <input autocomplete="off" (dateInput)="setMinDateforEnd()" formControlName="startDate" matInput [matDatepicker]="startDate">
+                            <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                            <mat-datepicker [calendarHeaderComponent]="customeHeader" #startDate>
+                                <mat-datepicker-actions>
+                                    <button mat-button matDatepickerCancel><mat-icon>highlight_off</mat-icon> Cancel</button>
+                                    <button mat-button matDatepickerApply><mat-icon>check_circle_outline</mat-icon> Save</button>
+                                </mat-datepicker-actions>
+                            </mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-control">
+                        <mat-label>End Date</mat-label>
+                        <mat-form-field color="primary" appearance="outline">
+                            <input autocomplete="off" [min]="endMinDate" formControlName="endDate" matInput [matDatepicker]="endDate">
+                            <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                            <mat-datepicker [calendarHeaderComponent]="customeHeader" #endDate>
+                                <mat-datepicker-actions>
+                                    <button mat-button matDatepickerCancel><mat-icon>highlight_off</mat-icon> Cancel</button>
+                                    <button mat-button matDatepickerApply><mat-icon>check_circle_outline</mat-icon> Save</button>
+                                </mat-datepicker-actions>
+                            </mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-control">
+                        <mat-slide-toggle color="primary" formControlName="weekend" >Include weekends?</mat-slide-toggle>
+                    </div>
+                    <div class="form-control">
+                        <mat-slide-toggle color="primary" formControlName="endDay" >Include end day?</mat-slide-toggle>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary">Calculate</button>
+                </mat-card-actions>
+            </mat-card>
+        </form>
+    </div>
+    <div>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Days beetween dates</mat-card-title>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <mat-card-content class="result">
+                <div>
+                    <span class="days">{{diffrDays}} <small>Days</small> </span>
+                    <p></p>
+                    <div class="dates">
+                        <span class=" date from">{{finaleStartDate}}</span>
+                        <span class="date to">{{finalEndDate}}</span>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-header class="m-t-30">
+                <mat-card-title>Alternative time units</mat-card-title>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <mat-card-content class="alternat">
+                <mat-list>
+                    <mat-list-item>{{totalHour}} <span>hours</span></mat-list-item>
+                    <mat-divider *ngIf="!isWeekEnd" ></mat-divider>
+                    <mat-list-item *ngIf="!isWeekEnd" ><div><b>{{totalS}}</b> Saturday,  <b>{{totalSs}}</b> Sunday</div> <span>Weekends</span> </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+.calender-header {
+    display: flex;
+    align-items: center;
+    padding: 0.5em 0.5em 15px;
+    
+    .label {
+      flex: 1;
+      height: 1em;
+      font-size: 20px;
+      text-align: center;
+      color: var(--dark-grey);
+    }
+    .mat-icon-button {
+        .mat-icon {
+            color: var(--grey);                
+        }
+    } 
+  }
+

@@ -45,7 +45,6 @@ export class ContactComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.cotactList.filter = filterValue.trim().toLowerCase();
-    console.log(this.cotactList)
     if (this.cotactList.paginator) {
       this.cotactList.paginator.firstPage();
     }

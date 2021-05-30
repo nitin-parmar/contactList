@@ -1,0 +1,55 @@
+.calculator {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 50vh;
+
+    .mat-card {
+        min-width: 300px;
+        margin: 0px 15px;
+    }
+
+    .mat-card-content {
+        padding-top: 15px;
+    }
+
+    .result {
+        .days {
+            text-align: center;
+            font-size: 2em;
+            display: block;
+            padding: 15px 0px 10px;
+            color: var(--primary-color);
+            
+            small {
+                color: var(--grey);
+                font-size: 14px;                
+            }
+        }        
+        .dates {
+            display: flex;
+            justify-content: space-evenly;
+
+            .date {
+                display: flex;
+                flex-direction: column;
+                font-size: 1.5em;
+                &::before {
+                    color: var(--dark-gre);
+                    font-size: 12px;
+                    font-weight: 600;
+                }
+                &.from {
+                    &::before {
+                        content: 'Start Date';
+                    }
+                }
+                &.to {
+                    &::before {
+                        content: 'End Date';
+                    }
+                }
+            }
+        }
+    }    
+}
